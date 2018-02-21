@@ -10,15 +10,27 @@ namespace osuRequests
     class OsuApiHelper
     {
         OsuClient m_client;
+        bool noApi = false;
 
         public OsuApiHelper(string apiKey)
         {
-            m_client = new OsuClient(apiKey);
-            
+            if (apiKey != String.Empty)
+            {
+                m_client = new OsuClient(apiKey);
+            }
+            else
+            {
+                noApi = true;
+            }
         }
 
         public async Task<string[]> GetBeatmap(string url)
         {
+            if (noApi)
+            {
+                return url;
+            }
+
             string[] parts = url.Split("/");
 
             int id = Convert.ToInt32(parts[parts.Length - 1]);
