@@ -31,12 +31,12 @@ namespace osuRequests
                 return new string[] { url, url };
             }
 
-            string[] parts = url.Split("/");
+            string[] parts = url.Split('/');
 
             int id = Convert.ToInt32(parts[parts.Length - 1]);
             bool isSet = parts[parts.Length - 2] == "s" ? true : false;
 
-            OsuBeatmap[] maps = m_client.GetBeatmap(id, isSet);
+            OsuBeatmap[] maps = await m_client.GetBeatmap(id, isSet);
 
             if (maps.Length == 0)
             {

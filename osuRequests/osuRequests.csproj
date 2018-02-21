@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSharpOSU" Version="1.4.5" />
     <PackageReference Include="IrcDotNet" Version="0.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>

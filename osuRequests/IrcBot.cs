@@ -180,7 +180,7 @@ namespace osuRequests
                     {
                         string source = e.Message.Source.Name;
                         string message = e.Message.Parameters[1];
-                        string[] request = message.Split(" ");
+                        string[] request = message.Split(' ');
 
                         if (message.ToLowerInvariant().StartsWith("!request") || message.ToLowerInvariant().StartsWith("!req"))
                         {
