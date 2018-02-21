@@ -28,7 +28,7 @@ namespace osuRequests
         {
             if (noApi)
             {
-                return url;
+                return new string[] { url, url };
             }
 
             string[] parts = url.Split("/");
